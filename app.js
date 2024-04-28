@@ -4,6 +4,7 @@ let compScore = 0;
 let msg = document.querySelector("#msg");
 let userScorePara = document.querySelector("#score-user");
 let compScorePara = document.querySelector("#score-comp");
+let btn = document.querySelector("button");
 
 const gencompChoice =() => {
     let options = ["rock","paper","scissors"];
@@ -61,6 +62,8 @@ const playGame =(userChoice) => {
         }
         showWinner(userWin ,userChoice,compChoice);       
     }
+
+
     
 
 
@@ -74,4 +77,15 @@ choices.forEach((choice) => {
         
         playGame(userChoice);
     });
+});
+
+function resetgame(){
+    userScorePara.innerText = 0;
+    compScorePara.innerText = 0;
+    msg.innerText ="play your move";
+    msg.style.backgroundColor = "rgb(7, 13, 14)";
+}
+
+btn.addEventListener("click",()=> {
+    resetgame();
 });
